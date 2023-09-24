@@ -1,0 +1,38 @@
+version: "3.4"
+
+services:
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      #POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: AspNetIdentitySampleDB
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+
+  aspnet-core-react-ext:
+    image: aleksvgrig/aspnet-core-react-ext
+    restart: always
+    ports:
+      - 8000:80
+      - 8001:443
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "https://+;http://+"
+      ASPNETCORE_HTTPS_PORT: 8001
+      ASPNETCORE_Kestrel__Certificates__Default__Password: "12345678"
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /src/https/aspnetcorereactext.pfx
+      ConnectionStrings__DefaultConnection: "Server=db;Port=5432;Database=AspNetIdentitySampleDB;User Id=postgres;Password=postgres"
+    #volumes:
+    #  - C:\Users\lelik\AppData\Roaming\ASP.NET\https:/https/
+    depends_on:
+      - db

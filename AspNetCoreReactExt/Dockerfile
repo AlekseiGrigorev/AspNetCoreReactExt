@@ -9,7 +9,9 @@ WORKDIR "/src/."
 RUN dotnet build "AspNetCoreReactExt.csproj" -c Debug -o /app/build
 RUN dotnet publish "AspNetCoreReactExt.csproj" -c Debug -o /app/publish /p:UseAppHost=false
 
-EXPOSE 7083
-EXPOSE 5252
+WORKDIR "/app/publish/."
 
-ENTRYPOINT ["dotnet", "/app/publish/AspNetCoreReactExt.dll",  "--urls", "http://*:5252;https://*:7083"]
+EXPOSE 80
+EXPOSE 443
+
+CMD ["dotnet", "AspNetCoreReactExt.dll"]
