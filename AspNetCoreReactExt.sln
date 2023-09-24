@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreReactExt", "AspNetCoreReactExt\AspNetCoreReactExt.csproj", "{105444B5-964A-4F06-9BBC-4CB7E560544C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{105444B5-964A-4F06-9BBC-4CB7E560544C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{105444B5-964A-4F06-9BBC-4CB7E560544C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{105444B5-964A-4F06-9BBC-4CB7E560544C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{105444B5-964A-4F06-9BBC-4CB7E560544C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C0578DFF-260F-4D99-909E-9420DB1409C5}
+	EndGlobalSection
+EndGlobal
